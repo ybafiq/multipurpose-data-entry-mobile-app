@@ -1,6 +1,6 @@
 # Multicrop
 
-A precision data entry application for palm tree data collection.
+A precision data entry application for data collection.
 
 ## Getting Started
 
