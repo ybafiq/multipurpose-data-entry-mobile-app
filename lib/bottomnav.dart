@@ -1,8 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:multicrop/screen/trial_entry_screen.dart';
-import 'package:multicrop/screen/dashboard_screen.dart';
-import 'package:multicrop/screen/view_entry_screen.dart';
+import 'package:multicrop2/screen/trial_entry_screen.dart';
+import 'package:multicrop2/screen/dashboard_screen.dart';
+import 'package:multicrop2/screen/view_entry_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   final String workerId;

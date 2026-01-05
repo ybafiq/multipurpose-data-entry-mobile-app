@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:multicrop/auth/login_auth.dart';
-import 'package:multicrop/screen/sync_page_screen.dart';
-import 'package:multicrop/service/storage_service.dart';
-import 'package:multicrop/service/api_auth_service.dart';
-import 'package:multicrop/service/api_trial_service.dart';
+import 'package:multicrop2/auth/login_auth.dart';
+import 'package:multicrop2/service/storage_service.dart';
+import 'package:multicrop2/service/api_auth_service.dart';
+import 'package:multicrop2/service/api_trial_service.dart';
+import 'package:multicrop2/screen/sync_page_screen.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';

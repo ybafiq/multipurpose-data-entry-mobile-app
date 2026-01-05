@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:multicrop/bottomnav.dart';
-import 'package:multicrop/service/storage_service.dart';
-import 'package:multicrop/service/api_record_service.dart';
+import 'package:multicrop2/bottomnav.dart';
+import 'package:multicrop2/service/storage_service.dart';
+import 'package:multicrop2/service/api_record_service.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';

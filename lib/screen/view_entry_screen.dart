@@ -2,8 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
-import 'package:multicrop/screen/sync_page_screen.dart';
-import 'package:multicrop/service/storage_service.dart';
+import 'package:multicrop2/screen/sync_page_screen.dart';
+import 'package:multicrop2/service/storage_service.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

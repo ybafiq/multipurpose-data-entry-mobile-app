@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:multicrop/service/storage_service.dart';
-import 'package:multicrop/service/api_record_service.dart';
+import 'package:multicrop2/service/storage_service.dart';
+import 'package:multicrop2/service/api_record_service.dart';
 import 'package:intl/intl.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:http/http.dart' as http;
 
 class TreeSearchDelegate extends SearchDelegate<int?> {
   final List<int> treeNumbers;
@@ -180,36 +179,6 @@ class _NewDataEntryPageState extends State<NewDataEntryPage> {
         .listen((List<ConnectivityResult> results) {
       _updateConnectionStatus(results);
     });
-  }
-
-  // Fetch latest trial from API
-  Future<void> _fetchLatestTrial() async {
-    try {
-      final token = await ApiRecordService.getStorageToken;
-      final tokenType = await ApiRecordService.getTokenType;
-      final response = await http.get(
-        Uri.parse('${ApiRecordService.baseUrl}/api/trials'),
-        headers: {
-          'Authorization': '$tokenType $token',
-        },
-      );
-      if (response.statusCode == 200) {
-        final data = json.decode(response.body);
-        if (data['success'] == true) {
-          final trials = data['data'] as List;
-          if (trials.isNotEmpty) {
-            final prefs = await SharedPreferences.getInstance();
-            await prefs.setString('cached_trials_list', json.encode(trials));
-            // Set the latest as selected
-            trials.sort((a, b) => (b['id'] as int).compareTo(a['id'] as int));
-            selectedTrialData = trials.first;
-            _loadPlotsFromTrialData();
-          }
-        }
-      }
-    } catch (e) {
-      // Ignore, will use cache or static
-    }
   }
 
   // Load offline trial data from cache or static
@@ -480,11 +449,6 @@ class _NewDataEntryPageState extends State<NewDataEntryPage> {
   /// Fetch available tree numbers from API for a specific plot
   Future<void> _fetchTreeNumbers([int? plotId]) async {
     _loadTreesFromPlotData(plotId);
-  }
-  
-  /// Fetch available plot numbers from API
-  Future<void> _fetchPlotNumbers() async {
-    _loadPlotsFromTrialData();
   }
 
   // ===== HELPERS =====
@@ -1008,44 +972,6 @@ class _NewDataEntryPageState extends State<NewDataEntryPage> {
         const SizedBox(height: 8),
         child,
       ],
-    );
-  }
-
-  Widget _textField({
-    required TextEditingController controller,
-    required String hint,
-    TextInputType? keyboardType,
-  }) {
-    return TextField(
-      controller: controller,
-      keyboardType: keyboardType,
-      style: const TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.w700,
-        color: Colors.black87,
-      ),
-      decoration: InputDecoration(
-        hintText: hint,
-        hintStyle: const TextStyle(fontSize: 15, color: Colors.black38),
-        filled: true,
-        fillColor: Colors.white,
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 14,
-          vertical: 14,
-        ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14),
-          borderSide: const BorderSide(color: Color(0xFFE5E5E5), width: 1),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14),
-          borderSide: const BorderSide(color: Color(0xFFE5E5E5), width: 1),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14),
-          borderSide: const BorderSide(color: Color(0xFF16A34A), width: 1.6),
-        ),
-      ),
     );
   }
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:multicrop/auth/login_auth.dart';
+import 'package:multicrop2/auth/login_auth.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

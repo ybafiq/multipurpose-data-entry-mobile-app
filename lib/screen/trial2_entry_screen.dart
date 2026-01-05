@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:multicrop/service/storage_service.dart';
+import 'package:multicrop2/service/storage_service.dart';
 
 class NewDataEntryPage extends StatefulWidget {
   final String workerId;

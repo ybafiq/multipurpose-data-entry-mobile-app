@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiTrialService {
   // ===== CONSTANTS =====
-  static const String baseUrl = 'https://example.com'; // Replace with your API base URL
+  static const String baseUrl = 'https://demo-api.example.com'; // Demo API endpoint
 
   // ===== TOKEN MANAGEMENT =====
 

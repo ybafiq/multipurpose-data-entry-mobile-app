@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:multicrop/bottomnav.dart';
-import 'package:multicrop/service/api_auth_service.dart';
+import 'package:multicrop2/bottomnav.dart';
+import 'package:multicrop2/service/api_auth_service.dart';
 import 'dart:async';
 import 'package:shared_preferences/shared_preferences.dart';
 

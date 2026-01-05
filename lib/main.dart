@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:multicrop/splash.dart';
+import 'package:multicrop2/splash.dart';
 
 void main() {
   runApp(const MyApp());

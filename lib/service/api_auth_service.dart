@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiAuthService {
-  static const String baseUrl = 'https://example.com'; // Replace with your API base URL
+  static const String baseUrl = 'https://demo-api.example.com'; // Demo API endpoint
   static const String _tokenKey = 'auth_token';
   static const String _tokenTypeKey = 'token_type';
   static const String _userIdKey = 'user_id';
